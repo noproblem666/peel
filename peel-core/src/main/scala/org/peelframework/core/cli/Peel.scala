@@ -24,7 +24,7 @@ import net.sourceforge.argparse4j.internal.HelpScreenException
 import org.apache.log4j.{Level, PatternLayout, RollingFileAppender}
 import org.peelframework.core.PeelApplicationContext
 import org.peelframework.core.cli.command.Command
-import org.peelframework.core.util.shell
+import org.peelframework.core.config.hostname
 import org.slf4j.{Logger, LoggerFactory}
 
 import scala.collection.JavaConversions._
@@ -161,11 +161,6 @@ object Peel {
     parser.setDefault("app.log.level", "INFO")
 
     parser
-  }
-
-  lazy val hostname = {
-    val name = shell !! "echo $HOSTNAME"
-    if (name.nonEmpty) name.trim else "localhost"
   }
 
   def printHeader(logger: Logger) {

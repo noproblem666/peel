@@ -14,3 +14,4 @@ target
 *.trace.db
 *.db.old
 *.versionsBackup
+.DS_Store

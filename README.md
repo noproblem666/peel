@@ -1,6 +1,8 @@
 Peel Experiments Execution Framework
 ====================================
 
+[![Build Status](https://travis-ci.org/peelframework/peel.svg?branch=dev)](https://travis-ci.org/peelframework/peel)
+
 Peel is a framework that helps you to define, execute, analyze, and share experiments for distributed systems and algorithms.
 
 For more information and technical documentation about the project, please visit [peel-framework.org](http://peel-framework.org).
@@ -39,6 +41,11 @@ Peel offers the following features for your experiments.
 | Flink            | 1.0.1          | `flink-1.0.1`     |
 | Flink            | 1.0.2          | `flink-1.0.2`     |
 | Flink            | 1.0.3          | `flink-1.0.3`     |
+| Flink            | 1.1.0          | `flink-1.1.0`     |
+| Flink            | 1.1.1          | `flink-1.1.1`     |
+| Flink            | 1.1.2          | `flink-1.1.2`     |
+| Flink            | 1.1.3          | `flink-1.1.3`     |
+| Flink            | 1.1.4          | `flink-1.1.4`     |
 | MapReduce        | 1.2.1          | `mapred-1.2.1`    |
 | MapReduce        | 2.4.1          | `mapred-2.4.1`    |
 | Spark            | 1.3.1          | `spark-1.3.1`     |
@@ -49,6 +56,9 @@ Peel offers the following features for your experiments.
 | Spark            | 1.6.0          | `spark-1.6.0`     |
 | Spark            | 1.6.2          | `spark-1.6.2`     |
 | Spark            | 2.0.0          | `spark-2.0.0`     |
+| Spark            | 2.0.1          | `spark-2.0.1`     |
+| Spark            | 2.0.2          | `spark-2.0.2`     |
+| Spark            | 2.1.0          | `spark-2.1.0`     |
 | Zookeeper        | 3.4.5          | `zookeeper-3.4.5` |
 | Dstat            | 0.7.2          | `dstat-0.7.2`     |
 
@@ -61,6 +71,7 @@ Peel offers the following features for your experiments.
 | `exp:run`            |  execute a specific experiment                     |
 | `exp:setup`          |  set up systems for a specific experiment          |
 | `exp:teardown`       |  tear down systems for a specific experiment       |
+| `exp:config`         |  list the configuration of a specific experiment   |
 | `hosts:generate`     |  generate a hosts.conf file                        |
 | `res:archive`        |  archive suite results to a tar.gz                 |
 | `res:extract`        |  extract suite results from a tar.gz               |

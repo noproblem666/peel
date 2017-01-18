@@ -140,7 +140,16 @@ class Flink(
       }
     }
   }
+  def startWithYarn(): Unit = {
 
+    val numberOfSlaves = config.getStringList(s"system.default.config.slaves").size()
+    val memoryJobmanager = config.getInt(s"system.$configKey.config.memory.jobmanager")
+    val memoryPerTaskmanager = config.getInt(s"system.default.config.memory.per-node") - memoryJobmanager / numberOfSlaves
+    val slotsPerTaskmanager = config.getInt(s"system.default.config.parallelism.per-node")
+    // TODO: Async and non-detached
+    shell ! s"${config.getString(s"system.$configKey.path.home")}/bin/yarn-session -d -n $numberOfSlaves -tm $memoryPerTaskmanager -jm $memoryJobmanager -s $slotsPerTaskmanager"
+    isUp = true
+  }
   override protected def stop() = {
     shell ! s"${config.getString(s"system.$configKey.path.home")}/bin/stop-cluster.sh"
     shell ! s"${config.getString(s"system.$configKey.path.home")}/bin/stop-webclient.sh"
